@@ -1,8 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var PythonShell = require('python-shell');
-
+let {PythonShell} = require('python-shell');
 
 app.set('view engine', 'pug');
 app.set('views','./views');
@@ -18,11 +17,19 @@ app.get("/calculator", function (req, res){
     res.render('calculator');
 });
 
+
 app.post("/calculator", function (req, res){
 	var numberOne = req.body.firstnumber
 	var numberTwo = req.body.secondnumber
 	var userOperator = req.body.operator
-	console.log(numberOne + numberTwo + userOperator)
+	var options = {
+	  scriptPath: 'python/scripts',
+	  args: [numberOne, numberTwo, userOperator], // pass arguments to the script here
+	};
+	PythonShell.run('calc.py', options, function (err, result) {
+		if (err) throw err;
+		res.render('calculator', {result: result})
+	})
 });
 
 app.listen(3000, function() {
