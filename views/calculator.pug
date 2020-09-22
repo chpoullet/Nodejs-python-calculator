@@ -1,0 +1,39 @@
+doctype html
+html
+   head
+      title = "Calculator"
+      style.
+          body {
+              font-size: 17px;
+              text-align:center;
+          }
+   body
+   body
+        h1 Welcome to the calculator
+        form(method='post' action='/calculator')
+               br
+               br
+               h4 Enter first number:
+               input(type='text' name='firstnumber' placeholder='Enter first number...' required='')
+               br
+               br
+               div
+                 h4 Choose an operator:
+                 label
+                   input(type='radio' value='1' name='operator[1][]')
+                   | Addition
+                 label
+                   input(type='radio' value='2' name='operator[1][]')
+                   | Subtraction
+                 label
+                   input(type='radio' value='3' name='operator[1][]')
+                   | Multiplication
+                 label
+                   input(type='radio' value='4' name='operator[1][]')
+                   | Division
+               br
+               br
+               h4 Enter second number:
+               input(type='text' name='secondnumber' placeholder='Enter second number...' required='')
+               br
+               input(type='submit' value='Submit')
