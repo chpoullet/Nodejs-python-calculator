@@ -28,7 +28,9 @@ app.post("/calculator", function (req, res){
 	};
 	PythonShell.run('calc.py', options, function (err, result) {
 		if (err) throw err;
-		res.render('calculator', {result: result})
+		console.log('The result is ' + result)
+		res.render('result', {result: result})
+		//res.render('calculator', {result: result})
 	})
 });
 

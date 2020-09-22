@@ -1,25 +1,23 @@
 import sys
-import os
 
 firstnumber = sys.argv[1]
 secondnumber = sys.argv[2]
 operator = sys.argv[3]
 
-firstint = float(firstnumber)
-secondint = float(secondnumber)
+firstfloat = float(firstnumber)
+secondfloat = float(secondnumber)
 
 if operator == '1':
-    result = firstint + secondint
-
+    result = firstfloat + secondfloat
+    print(result)
 elif operator == '2':
-    result = firstint - secondint
-
+    result = firstfloat - secondfloat
+    print(result)
 elif operator == '3':
-    result = firstint * secondint
-
+    result = firstfloat * secondfloat
+    print(result)
 elif operator == '4':
-    result = firstint / secondint
-
-
+    result = firstfloat / secondfloat
+    print(result)
 
 
